@@ -38,7 +38,7 @@ pipeline
         stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/nutanautomation22/Nov2022POMSeriesCode'
+                    git 'https://github.com/nutanautomation22/Nov2022POMSeriesCode.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
                     
                 }
@@ -82,7 +82,7 @@ pipeline
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/nutanautomation22/Nov2022POMSeriesCode'
+                    git 'https://github.com/nutanautomation22/Nov2022POMSeriesCode.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
                     
                 }
